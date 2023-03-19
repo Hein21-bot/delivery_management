@@ -22,8 +22,8 @@ const getItem = (req, res) => {
 }
 
 const itemCreate = (req, res) => {
-
-    return itemService.addItem({ ...req.body })
+    const orderId = req.body.orderId
+    return itemService.addItem({ ...req.body }, orderId)
         .then(dataResult => {
             return res.json(
                 response({

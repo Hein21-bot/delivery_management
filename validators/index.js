@@ -27,7 +27,6 @@ const orderValidators = [
       }
       return true;
     })
-  //  .isInt().withMessage('Number must be an integer')
 ]
 
 const customerValidators = [
@@ -37,6 +36,21 @@ const customerValidators = [
     .notEmpty().withMessage('phone_no is required'),
 ]
 
+const paymentValidators = [
+  body('payment_type')
+    .notEmpty().withMessage('payment_type is required'),
+]
+
+const itemValidators = [
+  body('name')
+    .notEmpty().withMessage('name is required'),
+  body('price')
+    .notEmpty().withMessage('price is required'),
+  body('quantity')
+    .notEmpty().withMessage('quantity is required'),
+  body('order_id')
+    .notEmpty().withMessage('order_id is required'),
+]
 
 const validateFields = (req, res, next) => {
   const errors = validationResult(req);
@@ -46,4 +60,4 @@ const validateFields = (req, res, next) => {
   else next()
 }
 
-module.exports = { orderValidators, customerValidators, validateFields }
+module.exports = { orderValidators, customerValidators, paymentValidators, itemValidators, validateFields }
