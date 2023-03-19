@@ -57,14 +57,14 @@ const updateOrder = (id, sender_id, receiver_id, descritpion, order_status, paym
     return query(`Update orders Set sender_id =${sender_id}, receiver_id =${receiver_id} , descritpion ='${descritpion}', order_status =${order_status}, payment_id = ${payment_id} where id = ${id} `)
 }
 
-const addReceiver = (name, address, phone_no, customer_id) => {
+const addReceiver = (name, address, phone_no) => {
     let query = util.promisify(mypool.query).bind(mypool);
-    return query(`Insert Into receiver(name,address,phone_no,customer_id) Values ('${name}','${address}', '${phone_no}', ${customer_id})`)
+    return query(`Insert Into receiver(name,address,phone_no) Values ('${name}','${address}', '${phone_no}')`)
 }
 
-const updateReceiver = (id, name, address, phone_no, customer_id) => {
+const updateReceiver = (id, name, address, phone_no) => {
     let query = util.promisify(mypool.query).bind(mypool);
-    return query(`Update receiver Set name = '${name}', address ='${address}', phone_no = '${phone_no}' , customer_id = ${customer_id} where id =${id}`)
+    return query(`Update receiver Set name = '${name}', address ='${address}', phone_no = '${phone_no}'  where id =${id}`)
 }
 
 const addSender = (name, address, phone_no) => {

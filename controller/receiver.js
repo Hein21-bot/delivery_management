@@ -22,9 +22,8 @@ const receiverCreate = (req, res) => {
     const name = req.body.name
     const address = req.body.address
     const phone_no = req.body.phone_no
-    const customer_id = req.body.customer_id
 
-    return receiverService.addReceiver(name, address, phone_no, customer_id)
+    return receiverService.addReceiver(name, address, phone_no)
         .then(dataResult => {
             return res.json(
                 response({
@@ -45,9 +44,8 @@ const receiverUpdate = (req, res) => {
     const name = req.body.name
     const address = req.body.address
     const phone_no = req.body.phone_no
-    const customer_id = req.body.customer_id
 
-    return receiverService.updateReceiver(id, name, address, phone_no, customer_id)
+    return receiverService.updateReceiver(id, name, address, phone_no)
         .then(dataResult => {
             return res.json(
                 response({

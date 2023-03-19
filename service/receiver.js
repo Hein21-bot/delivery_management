@@ -8,17 +8,17 @@ const getReceiver = (id) => {
     }
 }
 
-const addReceiver = (name, address, phone_no, customer_id) => {
+const addReceiver = (name, address, phone_no) => {
     try {
-        return db.addReceiver(name, address, phone_no, customer_id)
+        return db.addReceiver(name, address, phone_no)
     } catch (error) {
         throw error.toString()
     }
 }
 
-const updateReceiver = (id, name, address, phone_no, customer_id) => {
+const updateReceiver = (id, name, address, phone_no) => {
     try {
-        return db.updateReceiver(id, name, address, phone_no, customer_id)
+        return db.updateReceiver(id, name, address, phone_no)
     } catch (error) {
         throw error.toString()
     }
