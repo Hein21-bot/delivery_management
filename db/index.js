@@ -47,6 +47,11 @@ const updateItem = (id, name, description, price, quantity, barcode) => {
     return query(`UPDATE items SET name = '${name}', description = '${description}', price = '${price}', quantity = '${quantity}', barcode = '${barcode}' where id = ${id}`)
 }
 
+const deleteItem = (id) => {
+    let query = util.promisify(mypool.query).bind(mypool);
+    return query(`DELETE FROM items WHERE id = ${id}`)
+}
+
 const addOrder = (sender_id, receiver_id, descritpion, order_status, payment_id) => {
     let query = util.promisify(mypool.query).bind(mypool);
     return query(`Insert Into orders (sender_id,receiver_id,descritpion,order_status, payment_id) Values (${sender_id}, ${receiver_id}, '${descritpion}', ${order_status} , ${payment_id})`)
@@ -126,4 +131,4 @@ const getItemByBarCode = (code) => {
     return query(`SELECT * FROM delivery.items where barcode = '${code}';`)
 }
 
-module.exports = { getItem, getOrder, getReceiver, getSender, getPayment, addItem, updateItem, addOrder, updateOrder, addReceiver, updateReceiver, addSender, updateSender, addPayment, updatePayment, getOrderList, getItemListByOrder, getReceiverByOrder, getSenderByOrder, getPaymentByOrder, getItemByBarCode }
+module.exports = { getItem, getOrder, getReceiver, getSender, getPayment, addItem, updateItem, deleteItem, addOrder, updateOrder, addReceiver, updateReceiver, addSender, updateSender, addPayment, updatePayment, getOrderList, getItemListByOrder, getReceiverByOrder, getSenderByOrder, getPaymentByOrder, getItemByBarCode }

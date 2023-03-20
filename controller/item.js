@@ -38,8 +38,6 @@ const itemCreate = (req, res) => {
 
 };
 
-
-
 const itemUpdate = (req, res) => {
     const id = req.params.id
     const name = req.body.name
@@ -62,6 +60,22 @@ const itemUpdate = (req, res) => {
         });
 };
 
+
+const deleteItem = (req, res) => {
+    const id = req.params.id
+    return itemService.deleteItem(id).then(dataResult => {
+        return res.json(
+            response({
+                success: true,
+                message: "Success!",
+                payload: dataResult
+            })
+        )
+    }).catch(err => {
+        res.json(response({ success: false, message: err }));
+    });
+}
+
 const getItemByBarCode = (req, res) => {
     const code = req.params.code
     return itemService.getItemByBarCode(code).then(dataResult => {
@@ -78,4 +92,4 @@ const getItemByBarCode = (req, res) => {
 }
 
 
-module.exports = { getItem, itemCreate, itemUpdate, getItemByBarCode }
+module.exports = { getItem, itemCreate, itemUpdate, deleteItem, getItemByBarCode }

@@ -40,6 +40,14 @@ const updateItem = (id, name, description, price, quantity, barcode) => {
     }
 }
 
+const deleteItem = (id) => {
+    try {
+        return db.deleteItem(id)
+    } catch (error) {
+        throw error.toString()
+    }
+}
+
 const getItemByBarCode = (code) => {
     try {
         return db.getItemByBarCode(code)
@@ -48,4 +56,4 @@ const getItemByBarCode = (code) => {
     }
 }
 
-module.exports = { getItem, addItem, updateItem, getItemByBarCode }
+module.exports = { getItem, addItem, updateItem, deleteItem, getItemByBarCode }
