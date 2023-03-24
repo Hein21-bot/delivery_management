@@ -34,6 +34,17 @@ const addItem = (item, orderId) => {
 
 const updateItem = (id, name, description, price, quantity, barcode) => {
     try {
+        const canvas = createCanvas(200, 200);
+        const barcode = Math.random(10)
+        JsBarcode(canvas, barcode);
+        const filePath = path.join(`public/upload/${barcode}.png`);
+
+        const decodedData = canvas.toBuffer('image/png');
+
+        fs.writeFile(filePath, decodedData, (err) => {
+            if (err) throw err;
+        });
+
         return db.updateItem(id, name, description, price, quantity, barcode)
     } catch (error) {
         throw error.toString()

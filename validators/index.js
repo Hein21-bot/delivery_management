@@ -48,8 +48,8 @@ const itemValidators = [
     .notEmpty().withMessage('price is required'),
   body('quantity')
     .notEmpty().withMessage('quantity is required'),
-  body('order_id')
-    .notEmpty().withMessage('order_id is required'),
+  body('orderId')
+    .notEmpty().withMessage('orderId is required'),
 ]
 
 const validateFields = (req, res, next) => {

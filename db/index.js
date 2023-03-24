@@ -77,7 +77,7 @@ const addSender = (name, address, phone_no) => {
     return query(`Insert Into sender (name,address, phone_no) Values ('${name}', '${address}', '${phone_no}')`)
 }
 
-const updateSender = (name, address, phone_no) => {
+const updateSender = (id, name, address, phone_no) => {
     let query = util.promisify(mypool.query).bind(mypool);
     return query(`Update sender Set name = '${name}', address ='${address}', phone_no= '${phone_no}' where id = ${id}`)
 }

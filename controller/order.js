@@ -54,8 +54,9 @@ const orderUpdate = (req, res) => {
     const receiver_id = req.body.receiver_id
     const descritpion = req.body.descritpion
     const order_status = req.body.order_status
+    const payment_id = req.body.payment_id
 
-    return orderService.updateOrder(id, sender_id, receiver_id, descritpion, order_status)
+    return orderService.updateOrder(id, sender_id, receiver_id, descritpion, order_status,payment_id)
         .then(dataResult => {
             return res.json(
                 response({
