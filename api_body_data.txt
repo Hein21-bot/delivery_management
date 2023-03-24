@@ -1,0 +1,98 @@
+//receiver update with id
+{
+  "name" : "receiver 1",
+  "address": "receiver",
+  "phone_no": "09951653425"
+}
+
+//receiver create
+{
+  "name" : "Hello123",
+  "address": "hello123",
+  "phone_no": "09951653425"
+}
+
+//sender update with id
+{
+  "name" : "Hello123",
+  "address": "hello123",
+  "phone_no": "09951653425"
+}
+//sender create 
+{
+  "name" : "Hello",
+  "address": "hello123",
+  "phone_no": "09951653425"
+}
+
+//payment update with id
+{
+  "payment_type": "Wave1",
+  "phone_no": "09951673741"
+}
+
+//payment create
+{
+  "payment_type": "wave",
+  "phone_no": "09951673741"
+}
+
+//order update
+{
+  "receiver_id": 2,
+  "sender_id": 2,
+  
+  "payment_id": 2,
+  "descritpion": "test1",
+  "order_status": 0
+}
+
+//item update
+{
+      "name": "Mango",
+      "description": "description1",
+      "price": 1000,
+      "quantity": 2,
+      "orderId": 14
+    }
+
+//item add
+{
+      "name": "Mango",
+      "description": "description",
+      "price": 500,
+      "quantity": 4,
+      "orderId": 14
+    }
+
+//order create
+{
+  "receiver_id": 1,
+  "sender_id": 1,
+  "item_list": [
+    {
+      "name": "Sauses",
+      "descritpion": "",
+      "price": 500,
+      "quantity": 4,
+      "item_total_price": 2000
+    },
+    {
+      "name": "Burger",
+      "descritpion": "no sugar",
+      "price": 1500,
+      "quantity": 2,
+      "item_total_price": 3000
+    },
+    {
+      "name": "Ice Coffee",
+      "descritpion": "less ice",
+      "price": 1000,
+      "quantity": 3,
+      "item_total_price": 3000
+    }
+  ],
+  "payment_id": 1,
+  "descritpion": "test",
+  "order_status": 0
+}
