@@ -7,6 +7,8 @@ const express = require('express')
 const { orderValidators } = require('../validators')
 const router = express.Router()
 
+// login
+// authentication
 router.use('/item', itemRouter)
 router.use('/order',orderRouter)
 router.use('/receiver', receiverRouter)
